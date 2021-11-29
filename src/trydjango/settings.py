@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     #own
     'products',
     'pages',
+    'blog',
+
 ]
 
 MIDDLEWARE = [
@@ -82,8 +84,14 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', #'django.db.backends.sqlite3',
+        #https://stackoverflow.com/questions/32574472/django-migrations-says-database-backend-isnt-available
+        'NAME': 'gregs',  # BASE_DIR / 'db.sqlite3',
+        'USER': 'gregs', 
+        'PASSWORD' : 'vucaw642', 
+        'HOST': 'localhost',
+        'PORT': '5432',
+
     }
 }
 
